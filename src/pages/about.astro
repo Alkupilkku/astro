@@ -1,5 +1,7 @@
 ---
-import './styles/global.css';
+import "./styles/global.css";
+import Navigation from "../../components/Navigation.astro";
+import Footer from '../../components/Footer.astro';
 const pageTitle = "About Me";
 const identity = {
   firstName: "Joel",
@@ -24,22 +26,20 @@ const fontWeight = "bold";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
-    <style define:vars={{skillColor, fontWeight, textCase}}>
+    <style define:vars={{ skillColor, fontWeight, textCase }}>
       h1 {
         color: purple;
         font-size: 4rem;
       }
-      .skill{
+      .skill {
         color: var(--skillColor);
-        font-weight:  var(--fontWeight);
-        text-transform:  var(--textCase);
-        }
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
     </style>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
+<Navigation />
     <h1>{pageTitle}</h1>
     <p>Hi, im woriking on my first Astro page.</p>
     <p>Love going out and being in nature.</p>
@@ -72,5 +72,6 @@ const fontWeight = "bold";
         <p>My goal is not 3 days</p>
       )
     }
+    <Footer />
   </body>
 </html>
