@@ -1,43 +1,46 @@
-# Astro Starter Kit: Minimal
+# Astro-blogiprojekti
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Ensimmäinen Astro-projektini. Tein sen harjoittellessani Astro-frameworkin
+perusteita tutoriaalin avulla, ja jatkoin sitten tutoriaalin päälle omilla
+lisäyksillä.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Sivu on julkaistu Netlifyssa:
+https://brilliant-dragon-86dce4.netlify.app/
 
-## 🚀 Project Structure
+## Mitä sivulla on
 
-Inside of your Astro project, you'll see the following folders and files:
+- Etusivu ja "About Me" -sivu, jotka käyttävät yhteistä layoutia
+- Header- ja Footer-komponentit, jotka näkyvät jokaisella sivulla
+- Blogi-postaukset markdown-tiedostoina
+- RSS-syöte (`/rss.xml`), joka hakee postaukset automaattisesti
+- Mobiiliystävällinen hampurilaisvalikko
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Teknologiat
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- Astro (sivujen rakentamiseen)
+- Markdown (blogipostaukset)
+- @astrojs/rss (RSS-syötteen generointiin)
+- Netlify (julkaisuun)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Mitä opin
 
-Any static assets, like images, can be placed in the `public/` directory.
+- Miten Astron komponenttirakenne toimii (layoutit, propsit, `Astro.props`)
+- Miten frontmatterissä voi määritellä dataa ja logiikkaa, jota templatessa
+  käyttää (esim. `skills.map(...)`, ehdollinen renderöinti `{happy && ...}`)
+- Miten `define:vars` vie muuttujia CSS:ään
+- Miten Astro eroaa Reactista: sivut renderöidään staattisesti buildissa,
+  joten interaktiivisuus (valikon toggle) tehdään erillisellä scriptillä
 
-## 🧞 Commands
+## Rajoitteet ja jatkokehitysideoita
 
-All commands are run from the root of the project, from a terminal:
+- Sivusto on täysin staattinen, joten esim. kommentit tai hakutoiminto
+  vaatisivat erillisen backendin tai kolmannen palvelun
+- Menu-skripti on toistaiseksi vain aria-expanded-togglaus; animaatiot
+  voisi lisätä
+- Postauksia voisi lajitella tageilla
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Ajaminen paikallisesti
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+npm install
+npm run dev
